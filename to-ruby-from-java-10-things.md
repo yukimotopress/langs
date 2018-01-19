@@ -138,7 +138,6 @@ a.abs      # => NoMethodError
   * But that's a distinction without a difference
   * By the time you need them, they automatically convert to `Proc` objects
 
-<!-- clear -->
 
 ``` ruby
 def with_block
@@ -150,7 +149,7 @@ with_block {
 }    
 ```
 
-- or -
+or
 
 ``` ruby
 def with_proc(&block)
@@ -513,7 +512,7 @@ Or...
   * run time
 
 
-Ruby Code
+### Ruby Code
 
 ``` ruby
 def factorial(n)
@@ -536,7 +535,7 @@ Output
 ```
 
 
-Java Code
+### Java Code
 
 ``` java
 public class Fact {
@@ -850,15 +849,15 @@ $ irb --simple-prompt
 
 ## Summary
 
-(10) Learn Ruby Conventions
-(9) Everything is an Object
-(8) (Almost) Everything is a Message
-(7) Ruby is Way More Dynamic Than You Expect
-(6) Objects are Strongly Typed, Not Statically Typed
-(5) Don't Worry About Interfaces
-(4) Mix it up with Mix-ins
-(3) Embrace Closures
-(2) `ri` is Your Friend, `irb` is Your Other Friend
-(1) Write Less Code
-(0) Ruby Makes Programming Fun Again
+- #10 Learn Ruby Conventions
+- #9 Everything is an Object
+- #8 (Almost) Everything is a Message
+- #7 Ruby is Way More Dynamic Than You Expect
+- #6 Objects are Strongly Typed, Not Statically Typed
+- #5 Don't Worry About Interfaces
+- #4 Mix it up with Mix-ins
+- #3 Embrace Closures
+- #2 `ri` is Your Friend, `irb` is Your Other Friend
+- #1 Write Less Code
+- #0 Ruby Makes Programming Fun Again
 
