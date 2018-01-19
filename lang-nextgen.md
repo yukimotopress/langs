@@ -37,7 +37,7 @@ Source: Wikipedia Programming Language Infoboxes
 
 | Lang           | Paradigm                                                             |
 |----------------|----------------------------------------------------------------------|
-| **Ruby**       | Multi-paradigm: Object-oriented, imperative, functional, reflective  |
+| **Ruby**       | Multi-paradigm: object-oriented, imperative, functional, reflective  |
 |                |  - vs -                                                              |
 | **Rust**       | Multi-paradigm: compiled, concurrent, functional, imperative, structured, generic  |
 | **Elixir**     | Multi-paradigm: functional, concurrent, distributed, process-oriented     |
