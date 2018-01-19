@@ -47,14 +47,14 @@ Source: Wikipedia Programming Language Infoboxes
 
 | Lang           | Paradigm                                                             |
 |----------------|----------------------------------------------------------------------|
-| **Ruby**       | Multi-paradigm: Object-oriented, imperative, functional, reflective  |
+| **Ruby**       | Multi-paradigm: object-oriented, imperative, functional, reflective  |
 |                | - vs -                                                               |
 | **C**          | Imperative (procedural), structured                                  |
 | **C++**        | Multi-paradigm: procedural, functional, object-oriented, generic     |
 | **Perl**       | Multi-paradigm: functional, imperative, object-oriented (class-based), reflective, procedural, event-driven, generic |
 | **Python**     | Object-oriented, imperative, functional, procedural, reflective      |
 | **PHP**        | Imperative, functional, object-oriented, procedural, reflective      |
-| **Java**       | Multi-paradigm: Object-oriented (class-based), structured, imperative, generic, reflective, concurrent |
+| **Java**       | Multi-paradigm: object-oriented (class-based), structured, imperative, generic, reflective, concurrent |
 | **JavaScript** | Multi-paradigm: object-oriented (prototype-based), imperative, functional, event-driven |
 
 
