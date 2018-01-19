@@ -24,6 +24,23 @@ C and C++  •  Perl  •  Python •  PHP  •  Java  • JavaScript
 Source: Wikipedia Programming Language Infoboxes
 
 
+## Designed by / Developers
+
+| Lang           | Designed by                                                          |
+|----------------|----------------------------------------------------------------------|
+| **Ruby**       | Yukihiro Matsumoto                                                   |
+|                | - vs -                                                               |
+| **C**          | Dennis Ritchie                                                       |
+| **C++**        | Bjarne Stroustrup                                                    |
+| **Perl**       | Larry Wall                                                           |
+| **Python**     | Guido van Rossum                                                     |
+| **PHP**        | Rasmus Lerdorf                                                       |
+| **Java**       | James Gosling                                                        |
+| **JavaScript** | Brendan Eich             |
+
+Source: Wikipedia Programming Language Infoboxes
+
+
 
 ## Paradigm
 
@@ -94,25 +111,6 @@ Source: Wikipedia Programming Language Infoboxes
 | **PHP**        | Falcon, Hack                                                  |
 | **Java**       | Ada 2005, BeanShell, C#, Chapel, Clojure, ECMAScript, Fantom, Gambas, Groovy, Hack, Haxe, J#, JavaScript, Kotlin, PHP, Python, Scala, Seed7, Vala  |
 | **JavaScript** | ActionScript, AtScript, CoffeeScript, Dart, JScript .NET, LiveScript, Objective-J, Opa, Perl 6, QML, TypeScript  |
-
-Source: Wikipedia Programming Language Infoboxes
-
-
-
-
-## Designed by / Developers
-
-| Lang           | Designed by                                                          |
-|----------------|----------------------------------------------------------------------|
-| **Ruby**       | Yukihiro Matsumoto                                                   |
-|                | - vs -                                                               |
-| **C**          | Dennis Ritchie                                                       |
-| **C++**        | Bjarne Stroustrup                                                    |
-| **Perl**       | Larry Wall                                                           |
-| **Python**     | Guido van Rossum                                                     |
-| **PHP**        | Rasmus Lerdorf                                                       |
-| **Java**       | James Gosling                                                        |
-| **JavaScript** | Brendan Eich             |
 
 Source: Wikipedia Programming Language Infoboxes
 
