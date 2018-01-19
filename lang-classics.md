@@ -11,7 +11,7 @@ C and C++  •  Perl  •  Python •  PHP  •  Java  • JavaScript
 | Lang           | First Appeared      |
 |----------------|---------------------|
 | **Ruby**       | 1995; 23 years ago  |
-|  - vs -        |                     |
+|                | - vs -              |
 | **C**          | 1972; 46 years ago  |
 | **C++**        | 1985; 33 years ago  |
 | **Perl**       | 1987; 30 years ago  |
@@ -31,7 +31,7 @@ Source: Wikipedia Programming Language Infoboxes
 | Lang           | Paradigm                                                             |
 |----------------|----------------------------------------------------------------------|
 | **Ruby**       | Multi-paradigm: Object-oriented, imperative, functional, reflective  |
-| - vs -         |                                                                      |
+|                | - vs -                                                               |
 | **C**          | Imperative (procedural), structured                                  |
 | **C++**        | Multi-paradigm: procedural, functional, object-oriented, generic     |
 | **Perl**       | Multi-paradigm: functional, imperative, object-oriented (class-based), reflective, procedural, event-driven, generic |
@@ -51,7 +51,7 @@ Source: Wikipedia Programming Language Infoboxes
 | Lang           | Typing Discipline                                                    |
 |----------------|----------------------------------------------------------------------|
 | **Ruby**       | Duck, dynamic, strong                                                |
-| - vs -         |                                                                      |
+|                | - vs -                                                               |
 | **C**          | Static, weak, manifest, nominal                                      |
 | **C++**        | Static, nominative, partially inferred                               |
 | **Perl**       | Dynamic                                                              |
@@ -68,7 +68,7 @@ Source: Wikipedia Programming Language Infoboxes
 | Lang           | Influenced by                                                        |
 |----------------|----------------------------------------------------------------------|
 | **Ruby**       | Ada, C++, CLU, Dylan, Eiffel, Lisp, Lua, Perl, Python, Smalltalk     |
-| - vs -         |                                                                      |
+|                | - vs -                                                               |
 | **C**          | B (BCPL, CPL), ALGOL 68, Assembly, PL/I, FORTRAN                     |
 | **C++**        | Ada, ALGOL 68, C, CLU, ML, Simula                                    |
 | **Perl**       | AWK, C, C++, Lisp, Pascal, sed, Smalltalk 80, Unix shell             |
@@ -86,7 +86,7 @@ Source: Wikipedia Programming Language Infoboxes
 | Lang           | Influenced                                                           |
 |----------------|----------------------------------------------------------------------|
 | **Ruby**       | Clojure, CoffeeScript, Crystal, D, Elixir, Falcon, Groovy, Ioke, Julia, Mirah, Nu, Reia, Ring, Rust, Swift  |
-| - vs -         |                                                                      |
+|                | - vs -                                                                  |
 | **C**          | Numerous: AMPL, AWK, csh, C++, C--, C#, Objective-C, BitC, D, Go, Java, JavaScript, Julia, Limbo, LPC, Perl, PHP, Pike, Processing, Python, Ring, Rust, Seed7, Vala, Verilog (HDL)  |
 | **C++**        | Ada 95, C#, C99, Chapel, D, Java, Lua, Perl, PHP, Python, Rust, Nim  |
 | **Perl**       | CoffeeScript, ECMAScript, Falcon, Groovy, JavaScript, Julia, LPC, Perl 6, PHP, Python, **Ruby**, Windows PowerShell |
@@ -105,7 +105,7 @@ Source: Wikipedia Programming Language Infoboxes
 | Lang           | Designed by                                                          |
 |----------------|----------------------------------------------------------------------|
 | **Ruby**       | Yukihiro Matsumoto                                                   |
-| - vs -         |                                                                      |
+|                | - vs -                                                               |
 | **C**          | Dennis Ritchie                                                       |
 | **C++**        | Bjarne Stroustrup                                                    |
 | **Perl**       | Larry Wall                                                           |
