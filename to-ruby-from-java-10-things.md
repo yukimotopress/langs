@@ -388,7 +388,7 @@ Adding Method new_method
 
 ### Code Eval
 
-```
+``` ruby
 class Module
   def trace_attr(sym)
     self.module_eval %{
@@ -416,10 +416,12 @@ Dog.new("Fido").name  # => Accessing name with value "Fido"
 _What is a Type?_
 
 A type is  
+
 **a set of values**  
+
 and  
+
 **a set of operations**  
-%class center
 
 
 
@@ -436,6 +438,17 @@ int main() {
 }
 ```
 
+``` c
+int two() { return 2; }
+```
+
+Output
+
+```
+nan
+0
+```
+
 
 ### Java Code (Strong)
 
@@ -449,19 +462,7 @@ public class Main {
 }
 ```
 
-```
-int two() { return 2; }
-```
-
-Output
-
-```
-nan
-0
-```
-
-
-```
+``` java
 public class Two {
    public static int two() {
     return 2;
@@ -474,3 +475,390 @@ Output
 ```
 3.5
 ```
+
+### Ruby Code (?)
+
+``` ruby
+require 'two'
+
+x = 1.5 + two
+puts x
+printf "%d", x
+```
+
+``` ruby
+def two
+  2
+end
+```
+
+Output
+
+```
+3.5
+3
+```
+
+
+### So what makes a language type safe?
+
+* Compiler knowledge of the variable types?
+* Declaring all variables?
+* Compiler catching all type errors?
+
+Or...
+
+* Catching all inappropriate operations on a type, either at
+  * compile time, or
+  * run time
+
+
+Ruby Code
+
+``` ruby
+def factorial(n)
+  result = 1
+  (2..n).each do |i|
+    result *= i
+  end
+  result
+end
+
+puts factorial(20)
+puts factorial(21)
+```
+
+Output
+
+```
+2432902008176640000
+51090942171709440000
+```
+
+
+Java Code
+
+``` java
+public class Fact {
+  static long factorial(long n) {
+    long result = 1;
+    for (long i=2; i<=n; i++)
+      result *= i;
+    return result;
+  }
+  public static
+    void main (String args[]) {
+      System.out.println(factorial(20));
+      System.out.println(factorial(21));
+  }
+}
+```
+
+Output
+
+```
+2432902008176640000
+-4249290049419214848       // Overflow!!
+```
+
+
+
+### Lanaguage Typing Systems
+
+
+Java is
+
+* Strongly,
+* Statically,
+* Manifestly
+
+typed.
+
+
+Ruby is
+
+* Strongly,
+* Dynamically,
+* Implicitly
+
+typed.
+
+
+
+### Testimonial
+
+> I've been a statically typed bigot for quite a few years.
+> I learned my lesson the hard way while using C.
+> Too many systems crashed in the field due to silly typing errors. [...]
+
+> Four years ago I got involved with Extreme Programming. [...] I can't
+> imagine not having a comprehensive suite of unit tests to back up
+> my development. [...]
+
+> About two years ago I noticed something.
+> I was depending less and less on the type system for safety.
+> My unit tests were preventing me from making type errors. [...]
+
+> So I tried writing some applications in Python, and then Ruby.
+> I was not entirely surprised when I found that type issues simply
+> never arose.
+
+-- [Bob Martin](http://www.artima.com/weblogs/viewpost.jsp?thread=4639)
+
+
+
+## Item #5 - Don't Worry About Interfaces
+
+
+### Ruby Uses Duck Typing
+
+* If it walks like a duck,
+* And talks like a duck,
+  * Then we can treat it like a duck.
+  * (who cares what it _really_ is)
+
+
+``` ruby
+class Duck
+  def talk
+     puts "Quack"
+  end
+end
+
+class DuckLikeObject
+  def talk
+     puts "Kwak"
+  end
+end
+
+flock = [
+  Duck.new,
+  DuckLikeObject.new
+]
+
+flock.each do |d|
+   d.talk
+end
+```
+
+No need to inherit from a common interface.
+
+
+
+
+## Item #4 - Mix it up with Mix-Ins
+
+Although Ruby does not have interfaces,
+it does have mix-ins defined by modules.
+
+A module...
+
+* Is a namespace (like a class)
+* Can have defined methods (like a class)
+* Can not be instanciated (unlike a class)
+* Can be mixed (included) into a class
+  * The module methods become instance methods of the class
+
+
+
+### Tedious comparison operators
+
+Although all the logic is in the less-than method,
+all the other comparisons must still be defined.
+
+``` ruby
+class Pair
+  attr_accessor :first, :second
+  # ...
+
+  def <(other)
+    (first < other.first) ||
+    (first == other.first && second < other.second)
+  end
+
+  def >(other)
+    other < self
+  end
+
+  # Other methods defined in terms of less than:
+  #     <=, >=, ==
+end
+```
+
+
+### Reuse the Mix-in
+
+A mix-in allows the commonality to be factored out.
+
+``` ruby
+module ComparableUsingLess
+  def >(other)
+    other < self
+  end
+
+  # Other methods defined in terms of less than:
+  #     <=, >=, ==
+end
+
+class Pair
+  include ComparableUsingLess
+
+  attr_accessor :first, :second
+  # ...
+
+  def <(other)
+    (first < other.first) ||
+    (first == other.first && second < other.second)
+  end
+end
+```
+
+
+
+## Item #3 - Embrace Closures
+
+**Iteration**
+
+``` ruby
+[1,2,3].each do |item| puts item end
+```
+
+
+**Resource Management**
+
+``` ruby
+file_contents = open(file_name) { |f| f.read }
+```
+
+**Callbacks**
+
+``` ruby
+widget.on_button_press { puts "Got Button Press" }
+```
+
+
+
+## Item #2 - `ri` is Your Friend, `irb` is Your Other Friend
+
+
+**`ri`**
+:  Ruby Information. Man pages for standard Ruby objects.
+
+**`irb`**
+:  Interactive Ruby. Console based interactive Ruby interpreter.
+
+
+```
+$ ri Array
+---------------------------------------------------------- Module: Array
+     Arrays are ordered, integer-indexed collections of any object.
+     Array indexing starts at 0, as in C or Java. A negative index is
+     assumed to be relative to the end of the array---that is, an index
+     of -1 indicates the last element of the array, -2 is the next to
+     last element in the array, and so on.
+------------------------------------------------------------------------
+Includes:
+---------
+     Enumerable(all?, any?, collect, detect, each_with_index, entries,
+     find, find_all, grep, include?, inject, map, max, member?, min,
+     partition, reject, select, sort, sort_by, to_a, zip)
+Class methods:
+--------------
+     [], new
+Instance methods:
+-----------------
+     &, *, +, -, <<, <=>, ==, [], []=, assoc, at, clear, collect,
+     collect!, compact, compact!, concat, delete, delete_at, delete_if,
+     each, each_index, empty?, eql?, fetch, fill, first, flatten,
+     flatten!, frozen?, hash, include?, index, indexes, indices, insert,
+     inspect, join, last, length, map, map!, nitems, pack, pop, push,
+     rassoc, reject, reject!, replace, reverse, reverse!, reverse_each,
+     rindex, select, shift, slice, slice!, sort, sort!, to_a, to_ary,
+     to_s, transpose, uniq, uniq!, unshift, values_at, zip, |
+```
+
+
+### Another RI Example
+
+Ask about the instance method `last`...
+
+```
+$ ri Array#last
+------------------------------------------------------------- Array#last
+     array.last     =>  obj or nil
+     array.last(n)  =>  an_array
+------------------------------------------------------------------------
+     Returns the last element(s) of _self_. If the array is empty, the
+     first form returns +nil+.
+
+      [ "w", "x", "y", "z" ].last   #=> "z"
+```
+
+
+
+### IRB Sample
+
+Add `1+2`, then find the methods defined in `Proc`...
+
+```
+$ irb --simple-prompt
+>> 1 + 2
+=> 3
+>> Proc.instance_methods(false)
+=> ["[]", "==", "dup", "call", "binding", "to_s",
+    "clone", "to_proc", "arity"]
+```
+
+
+
+
+## Item #1 - Stop Writing So Much Code!
+
+### Coworker Quote (paraphrased)
+
+> "I decided to try out Ruby to solve my problem.
+> So I wrote a little code and all of a sudden
+> I discovered that I was done."
+
+### Examples
+
+* Copland (Hivemind based) VS Needle Libraries
+* Rake (Ruby version of Make)
+
+
+
+
+## Item #Zero - Ruby Puts the Fun Back In Programming
+
+![](i/fun.jpg)
+
+
+
+
+## Some More Things You Should Know
+
+* Namespaces (Classes and Modules) are Independent of Packages
+* String Interpolation
+* "`.`" (dot) VS "`::`" (double colon)
+* No Overloading on Method Signatures
+* There is a [JRuby](http://jruby.org) project
+* Java static member function and Ruby class methods a kinda alike and kinda different
+* `finally` is named `ensure`
+* Flexible quoting
+
+
+
+## Summary
+
+(10) Learn Ruby Conventions
+(9) Everything is an Object
+(8) (Almost) Everything is a Message
+(7) Ruby is Way More Dynamic Than You Expect
+(6) Objects are Strongly Typed, Not Statically Typed
+(5) Don't Worry About Interfaces
+(4) Mix it up with Mix-ins
+(3) Embrace Closures
+(2) `ri` is Your Friend, `irb` is Your Other Friend
+(1) Write Less Code
+(0) Ruby Makes Programming Fun Again
+
