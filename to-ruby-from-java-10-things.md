@@ -32,10 +32,10 @@ disputed or defended, but has continued to intrigue researchers around the world
 > A language that doesn't affect the way you think about programming
 > is not worth knowing  
 >
-> --  Alan Perlis 
+> --  Alan Perlis
 
 
-## The Ruby Way
+### The Ruby Way
 
 This is _not_ yet another "Ruby is better than Java" article.
 Nor is it intended to bash Java or Java programmers.
@@ -89,8 +89,8 @@ end
 
 obj = create_from_factory(Array)
 ```    
-   
-   
+
+
 ### No Primitives!
 
 Even integers are full fledged objects.
@@ -130,7 +130,7 @@ a.abs      # => NoMethodError
   * There are workarounds to this
     * But that's an advanced topic
     * And no one really _needs_ it anyways.
-  
+
 
 ### More Things that are not Objects
 
@@ -182,15 +182,15 @@ All computation in Ruby happens through:
 
 `run_status_reports`
 :  Send `:run_status_reports` (to `self`)
-  
+
 `1 + 2`
 :  Send `:+` (with argument `2`) to the object `1`
 
 `array[i]`
 :  Send `:[]` (with argument `i`) to the array
-  
-  
-  
+
+
+
 ### Messages, not Function Calls
 
 Java Programmers tend to think of `obj.method()` as looking up
@@ -202,26 +202,30 @@ to an object.
 What's the Difference?
 
 The difference is subtle, but important!
-  
-  
+
+
 ### What _Kind_ of Differences?
 
 Consider the following class.
 It defines an object that is able to record all the messages ever sent to it, and then playback those messages to another object.
-  
+
 ``` ruby  
 class VCR
+
   def initialize
     @messages = []
   end
+
   def method_missing(method, *args, &block)
     @messages << [method, args, block]
   end
+
   def play_back_to(obj)
     @messages.each do |method, args, block|
       obj.send(method, *args, &block)
     end
   end
+
 end
 ```
 
@@ -231,16 +235,16 @@ Example Code
 
 ``` ruby
 require 'src/vcr'
-    
+
 vcr = VCR.new
 vcr.sub!(/Java/) { "Ruby" }
 vcr.upcase!
 vcr[11,5] = "Universe"
 vcr << "!"
-    
+
 string = "Hello Java World"
 puts string
-    
+
 vcr.play_back_to(string)
 puts string
 ```
@@ -268,7 +272,7 @@ HELLO RUBY Universe!
 :  Just write the methods that need to be mocked. Proxy or ignore the others as needed.
 
 **Builders**
-:  Generate XML/HTML/Whatever based on the methods called on the builder
+:  Generate XML/HTML/Whatever based on the methods called on the builder.
 
 
 
@@ -277,7 +281,7 @@ HELLO RUBY Universe!
 One of the big attractions of Java over C++ was the dynamic features
 of the language. You could easily load classes at run time,
 query objects about their classes and methods,
-and even call methods discovered at runtime. 
+and even call methods discovered at runtime.
 
 
 ### Dynamic Beyond Java
@@ -298,18 +302,15 @@ Ruby takes dynamic behavior several steps beyond Java.
 Create Object - The Java Version
 
 ``` java
-public static Object create(Class c, String value)
-  throws Exception
+public static Object create(Class c, String value) throws Exception
 {
-  Constructor ctor = c.getConstructor(
-    new Class[] { String.class } );
+  Constructor ctor = c.getConstructor( new Class[] { String.class } );
   return ctor.newInstance( new Object[] { "Hello" } );
 }
-    
-public static void main (String args[])
-  throws Exception
+
+public static void main (String args[]) throws Exception
 {
-  Greeting g =(Greeting) create(Greeting.class, "Hello");
+  Greeting g = (Greeting) create(Greeting.class, "Hello");
   g.show();
 }
 ```
@@ -320,22 +321,22 @@ The Ruby Version
 def create(klass, value)
   klass.new(value)
 end
-    
+
 g = create(Greeting, "Hello")
 g.show
 ```
 
 ### Open Classes
 
-Methods can be added to classes at any point ... even built in classes. 
+Methods can be added to classes at any point ... even built in classes.
 
 ``` ruby
 class Integer
   def even?
     (self % 2) == 0
-   end
+  end
 end
-    
+
 p (1..10).select { |n| n.even? }
 # => [2, 4, 6, 8, 10]
 ```
@@ -350,14 +351,14 @@ Singleton methods are defined on individual objects, not classes.
 ``` ruby
 class Dog
 end
-    
+
 rover = Dog.new
 fido = Dog.new
-    
+
 def rover.speak
   puts "Red Rover"
 end
-    
+
 rover.speak  # => "Red Rover"
 fido.speak   # => NoMethodError
 ```
@@ -369,13 +370,15 @@ during the execution of a program.
 
 ``` ruby
 class MyClass
+
   def MyClass.method_added(name)
     puts "Adding Method #{name}"
   end
-      
+
   def new_method
     # Yada yada yada
   end
+
 end
 ```
 
@@ -385,26 +388,29 @@ Output
 Adding Method new_method
 ```
 
+
 ### Code Eval
 
 ``` ruby
 class Module
+
   def trace_attr(sym)
-    self.module_eval %{
-      def #{sym}
-        printf "Accessing %s with value %s\n",
-          "#{sym}", @#{sym}.inspect
-        @#{sym}
-      end
-    }
+    self.module_eval %{def #{sym}
+                         printf "Accessing %s with value %s\n", "#{sym}", @#{sym}.inspect
+                         @#{sym}
+                       end}
   end
+
 end
+
 class Dog
   trace_attr :name
+
   def initialize(string)
     @name = string
   end
 end
+
 Dog.new("Fido").name  # => Accessing name with value "Fido"
 ```
 
@@ -412,7 +418,7 @@ Dog.new("Fido").name  # => Accessing name with value "Fido"
 
 ## Item #6 - Objects are Strongly Typed - Not Statically Typed
 
-_What is a Type?_
+### What is a Type?
 
 A type is  
 
@@ -428,7 +434,9 @@ and
 
 ``` c
 #include <stdio.h>
+
 extern float two();
+
 int main() {
   float x = 1.5 + two();
   printf("%f\n", x);
@@ -436,6 +444,8 @@ int main() {
   return 0;
 }
 ```
+
+---
 
 ``` c
 int two() { return 2; }
@@ -453,17 +463,18 @@ nan
 
 ``` java
 public class Main {
-  public static
-    void main (String args[]) {
+  public static void main (String args[]) {
     double x = 1.5 + Two.two();
     System.out.println(x);
   }
 }
 ```
 
+---
+
 ``` java
 public class Two {
-   public static int two() {
+  public static int two() {
     return 2;
   }
 }
@@ -484,6 +495,8 @@ x = 1.5 + two
 puts x
 printf "%d", x
 ```
+
+---
 
 ``` ruby
 def two
@@ -545,10 +558,9 @@ public class Fact {
       result *= i;
     return result;
   }
-  public static
-    void main (String args[]) {
-      System.out.println(factorial(20));
-      System.out.println(factorial(21));
+  public static void main(String args[]) {
+    System.out.println(factorial(20));
+    System.out.println(factorial(21));
   }
 }
 ```
@@ -589,20 +601,20 @@ typed.
 > I've been a statically typed bigot for quite a few years.
 > I learned my lesson the hard way while using C.
 > Too many systems crashed in the field due to silly typing errors. [...]
-
+>
 > Four years ago I got involved with Extreme Programming. [...] I can't
 > imagine not having a comprehensive suite of unit tests to back up
 > my development. [...]
-
+>
 > About two years ago I noticed something.
 > I was depending less and less on the type system for safety.
 > My unit tests were preventing me from making type errors. [...]
-
+>
 > So I tried writing some applications in Python, and then Ruby.
 > I was not entirely surprised when I found that type issues simply
 > never arose.
-
--- [Bob Martin](http://www.artima.com/weblogs/viewpost.jsp?thread=4639)
+>
+> -- [Bob Martin](http://www.artima.com/weblogs/viewpost.jsp?thread=4639)
 
 
 
@@ -801,11 +813,11 @@ Add `1+2`, then find the methods defined in `Proc`...
 
 ```
 $ irb --simple-prompt
+
 >> 1 + 2
 => 3
 >> Proc.instance_methods(false)
-=> ["[]", "==", "dup", "call", "binding", "to_s",
-    "clone", "to_proc", "arity"]
+=> ["[]", "==", "dup", "call", "binding", "to_s", "clone", "to_proc", "arity"]
 ```
 
 
@@ -813,15 +825,15 @@ $ irb --simple-prompt
 
 ## Item #1 - Stop Writing So Much Code!
 
-### Coworker Quote (paraphrased)
+Coworker Quote (paraphrased)
 
 > "I decided to try out Ruby to solve my problem.
 > So I wrote a little code and all of a sudden
 > I discovered that I was done."
 
-### Examples
+Examples
 
-* Copland (Hivemind based) VS Needle Libraries
+* Copland (Hivemind based) vs Needle Libraries
 * Rake (Ruby version of Make)
 
 
@@ -838,7 +850,7 @@ $ irb --simple-prompt
 
 * Namespaces (Classes and Modules) are Independent of Packages
 * String Interpolation
-* "`.`" (dot) VS "`::`" (double colon)
+* "`.`" (dot) vs "`::`" (double colon)
 * No Overloading on Method Signatures
 * There is a [JRuby](http://jruby.org) project
 * Java static member function and Ruby class methods a kinda alike and kinda different
@@ -860,4 +872,3 @@ $ irb --simple-prompt
 - #2 `ri` is Your Friend, `irb` is Your Other Friend
 - #1 Write Less Code
 - #0 Ruby Makes Programming Fun Again
-
