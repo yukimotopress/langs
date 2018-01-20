@@ -209,3 +209,27 @@ Implicit (Structural/Duck) vs Explicit Interface/Protocol Declarations
 | **Go**                 | Static, strong, inferred, structural                                 |
 | **Rust**               | Static, strong, inferred, nominal, linear                            |
 | **Crystal**            | Static                                                               |
+
+
+
+### Paradigms
+
+
+| Lang                   | Object-Oriented  |  Functional  | Reflective | Concurrent |
+|------------------------|-----------------------------------------------------------|
+| **Ruby**               | Yes              | Yes (*)      | Yes        | X          |
+|                        | - vs -           |
+| **Perl**               | Yes              | Yes (*)      | Yes        | X          |
+| **Python**             | Yes              | Yes (*)      | Yes        | X          |
+| **PHP**                | Yes              | Yes (*)      | Yes (*)    | X          |
+| **Lua**                | Yes (*)          | Yes (*)      | Yes        | X          |
+| **JavaScript**         | Yes (*)          | Yes (*)      | Yes        | X          |
+| **Erlang**             | X                | Yes          | ??         | Yes        |
+| **Elixir (on Erlang)** | X                | Yes          | Yes        | Yes        |
+|                        |                  |              |            |            |
+| **C**                  | X                | X            | X          | X          |
+| **C++**                | Yes              | Yes (*)      | X          | Yes (*)    |
+| **Java**               | Yes              | Yes (*)      | Yes (*)    | Yes (*)    |
+| **Go**                 | X                | Yes (*)      | X          | Yes        |
+| **Rust**               | X                | Yes          | X          | Yes (*)    |
+| **Crystal**            | Yes              | Yes (*)      | X          | Yes        |

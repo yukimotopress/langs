@@ -67,6 +67,7 @@ List<Integer> result = range(1, 10).map(i -> i * 2).boxed().collect(toList());
 JavaScript
 
 ``` js
+??
 ```
 
 
@@ -126,6 +127,7 @@ IntStream.iterate(0, i -> i + 1).limit(1000).reduce(0, Integer::sum);
 JavaScript
 
 ``` js
+??
 ```
 
 
@@ -190,6 +192,7 @@ keywords.stream().reduce(false, (b, keyword) -> b || tweet.contains(keyword), (l
 JavaScript
 
 ``` js
+??
 ```
 
 
@@ -247,9 +250,11 @@ try (Stream<String> lines = Files.lines(new File("data.txt").toPath(), Charset.d
 }
 ```
 
+
 JavaScript
 
 ``` js
+??
 ```
 
 
@@ -298,6 +303,7 @@ range(1, 5).boxed().map(i -> { out.print("Happy Birthday "); if (i == 3) return 
 JavaScript
 
 ``` js
+??
 ```
 
 
@@ -346,6 +352,7 @@ Map<String, List<Integer>> result = Stream.of(49, 58, 76, 82, 88, 90).collect(gr
 JavaScript
 
 ``` js
+??
 ```
 
 
@@ -400,6 +407,7 @@ JAXB.marshal(feed, System.out);
 JavaScript
 
 ``` js
+??
 ```
 
 
@@ -469,6 +477,7 @@ int max = Stream.of(14, 35, -7, 46, 98).reduce(Integer::max).get();
 JavaScript
 
 ``` js
+??
 ```
 
 
@@ -525,11 +534,17 @@ long result = dataList.parallelStream().mapToInt(line -> processItem(line)).sum(
 JavaScript
 
 ``` js
+??
 ```
 
 
 
+
 ## One Liner #10 - Sieve of Eratosthenes
+
+
+<!-- fix/todo: use primes below 121 for calculation sample / output -->
+
 
 Ruby
 
@@ -554,6 +569,20 @@ primeSieve(11)
 
 # -or-
 
+def eratosthenes(n)
+  # eratosthenes starts with nums = [nil, nil, 2, 3, 4, 5, ..., n],
+  # then marks (　the nil setting　) multiples of 2, 3, 5, 7, ... there,
+  # then returns all non-nil numbers which are the primes.
+
+  nums = [nil, nil, *2..n]
+  (2..Math.sqrt(n)).each do |i|
+    (i**2..n).step(i){ |m| nums[m] = nil}  if nums[i]
+  end
+  nums.compact
+end
+
+# -or-
+
 def primeSieve(n)
   nums = (2..n).to_a
   nums.each { |num| nums.map! { |i| i % num == 0 && i != num ? nil : i }.compact! }
@@ -569,6 +598,28 @@ Prime.take(5)
 Perl
 
 ``` perl
+sub sieve {
+  my $n = shift;
+  my @composite;
+  for my $i (2 .. int(sqrt($n))) {
+    if (!$composite[$i]) {
+      for (my $j = $i*$i; $j <= $n; $j += $i) {
+        $composite[$j] = 1;
+      }
+    }
+  }
+  my @primes;
+  for my $i (2 .. $n) {
+    $composite[$i] || push @primes, $i;
+  }
+  @primes;
+}
+```
+---
+
+<!-- shortcut version -->
+
+``` perl
 sub p { $_[0], @_ > 1 ? p(grep { $_ % $_[0] } @_) : () }
 my @primes = p(2 .. 100);
 say foreach @primes;
@@ -578,10 +629,61 @@ say foreach @primes;
 Python
 
 ``` python
+# Using set lookup
+def eratosthenes2(n):
+    multiples = set()
+    for i in range(2, n+1):
+        if i not in multiples:
+            yield i
+            multiples.update(range(i*i, n+1, i))
+
+print(list(eratosthenes2(100)))
+
+# Using array lookup
+def primes_upto(limit):
+    is_prime = [False] * 2 + [True] * (limit - 1)
+    for n in range(int(limit**0.5 + 1.5)): # stop at ``sqrt(limit)``
+        if is_prime[n]:
+            for i in range(n*n, limit+1, n):
+                is_prime[i] = False
+    return [i for i, prime in enumerate(is_prime) if prime]
+```
+
+---
+
+<!-- shortcut version -->
+
+``` python
 print sorted(set(range(2,n+1)).difference(set((p * f) for p in range(2,int(n**0.5) + 2) for f in range(2,(n/p)+1))))
 ```
 
 PHP
+
+``` php
+function iprimes_upto($limit)
+{
+  for ($i = 2; $i < $limit; $i++)
+  {
+	   $primes[$i] = true;
+  }
+
+  for ($n = 2; $n < $limit; $n++)
+  {
+	   if ($primes[$n])
+	   {
+	     for ($i = $n*$n; $i < $limit; $i += $n)
+	     {
+		      $primes[$i] = false;
+	     }
+	   }
+  }
+  return $primes;
+}
+```
+
+---
+
+<!-- shortcut version -->
 
 ``` php
 <?
@@ -592,17 +694,94 @@ echo join("\n", $p);
 
 Erlang
 
+
+``` erl
+-module(sieveof).
+-export([main/1,primes/1, primes/2]).                 
+
+main(X) -> io:format("Primes: ~w~n", [ primes(X) ]).  
+
+primes(X) -> sieve(range(2, X)).                                         
+primes(X, Y) -> remove(primes(X), primes(Y)).                            
+
+range(X, X) -> [X];                                                      
+range(X, Y) -> [X | range(X + 1, Y)].                                    
+
+sieve([X]) -> [X];                                                       
+sieve([H | T]) -> [H | sieve(remove([H * X || X <-[H | T]], T))].        
+
+remove(_, []) -> [];                                                     
+remove([H | X], [H | Y]) -> remove(X, Y);                                
+remove(X, [H | Y]) -> [H | remove(X, Y)].
+```
+
+---
+
+<!-- shortcut version -->
+
 ``` erl
 N = 50.
 [X || X <- lists:usort(lists:seq(2, N + 1)), not lists:member(X, lists:usort([(P * F) || P <- lists:seq(2, round(math:pow(N, 0.5)) + 2), F <- lists:seq(2, round(N / P))]))].
 ```
 
+
+
 Java
 
 ``` java
+import java.util.LinkedList;
+
+public class Sieve{
+       public static LinkedList<Integer> sieve(int n){
+               if(n < 2) return new LinkedList<Integer>();
+               LinkedList<Integer> primes = new LinkedList<Integer>();
+               LinkedList<Integer> nums = new LinkedList<Integer>();
+
+               for(int i = 2;i <= n;i++){ //unoptimized
+                       nums.add(i);
+               }
+
+               while(nums.size() > 0){
+                       int nextPrime = nums.remove();
+                       for(int i = nextPrime * nextPrime;i <= n;i += nextPrime){
+                               nums.removeFirstOccurrence(i);
+                       }
+                       primes.add(nextPrime);
+               }
+               return primes;
+       }
+}
 ```
+
 
 JavaScript
 
 ``` js
+function eratosthenes(limit) {
+    var primes = [];
+    if (limit >= 2) {
+        var sqrtlmt = Math.sqrt(limit) - 2;
+        var nums = new Array(); // start with an empty Array...
+        for (var i = 2; i <= limit; i++) // and
+            nums.push(i); // only initialize the Array once...
+        for (var i = 0; i <= sqrtlmt; i++) {
+            var p = nums[i]
+            if (p)
+                for (var j = p * p - 2; j < nums.length; j += p)
+                    nums[j] = 0;
+        }
+        for (var i = 0; i < nums.length; i++) {
+            var p = nums[i];
+            if (p)
+                primes.push(p);
+        }
+    }
+    return primes;
+}
 ```
+
+
+### Sieve of Eratosthenes References
+
+- [Sieve of Eratosthenes @ Rosetta Code](http://rosettacode.org/wiki/Sieve_of_Eratosthenes)
+- [Sieve of Eratosthenes @ Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)

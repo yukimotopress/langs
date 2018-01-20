@@ -11,7 +11,7 @@ Definitions
 Task
 
 Write a function to return the factorial of a number.
-Solutions can be iterative or recursive.
+Solutions can be recursive or iterative.
 
 
 
@@ -127,6 +127,22 @@ function factorial($n) {
 ```
 
 (Source: [Rosetta Code](http://rosettacode.org/wiki/Factorial#PHP))
+
+
+## Lua
+
+``` lua
+# Recursive
+function fact(n)
+  return n > 0 and n * fact(n-1) or 1
+end
+
+# Iterative
+# ??
+```
+
+(Source: [Rosetta Code](http://rosettacode.org/wiki/Factorial#Lua))
+
 
 
 ## JavaScript
@@ -282,7 +298,8 @@ def factorial(n)
 end
 ```
 
-<!-- todo/fix - check if ruby version work 1:1 -what needs to get changed ??
+<!-- todo/fix - check if ruby version works for crystal as-is 1:1
+      what needs to get changed ??
   -->
 
 
