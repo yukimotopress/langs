@@ -1,5 +1,17 @@
 # Notes
 
+## Add Memory Mangagement Language Table ???
+
+- Automatic Memory Management (Garbage Collection) vs Hand-Crafted/Hand-Coded/Manual
+
+
+## Performance / Speed
+
+## Popularity (Metrics)
+
+
+## Packages / Module (Counts) / Libraries
+
 
 
 
