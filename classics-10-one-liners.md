@@ -543,7 +543,36 @@ JavaScript
 ## One Liner #10 - Sieve of Eratosthenes
 
 
+> In mathematics, the sieve of Eratosthenes is a simple, ancient algorithm for
+> finding all prime numbers up to any given limit.
+>
+> It does so by iteratively marking as composite (i.e., not prime) the multiples of each prime,
+> starting with the first prime number, 2. The multiples of a given prime are generated
+> as a sequence of numbers starting from that prime,
+> with constant difference between them that is equal to that prime.
+> This is the sieve's key distinction from using trial division
+> to sequentially test each candidate number for divisibility by each prime.
+>
+> The sieve of Eratosthenes can be expressed in pseudocode, as follows:
+>
+>     Input: an integer n > 1.
+>   
+>     Let A be an array of boolean values, indexed by integers 2 to n,
+>     initially all set to true.
+>
+>     for i = 2, 3, 4, ..., not exceeding √n:
+>       if A[i] i true:
+>         for j=i^2, i^2+i, i^2+2i, i^2+3i, ..., not exceeding n:
+>            A[j] := false.
+>
+>     Output: all i such that A[i] is true.
+>
+> -- [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+
+
+
 <!-- fix/todo: use primes below 121 for calculation sample / output -->
+
 
 
 Ruby
