@@ -224,7 +224,7 @@ Implicit (Structural/Duck) vs Explicit Interface/Protocol Declarations
 | **PHP**                | Yes              | Yes (*)      | Yes (*)    | X          |
 | **Lua**                | Yes (*)          | Yes (*)      | Yes        | X          |
 | **JavaScript**         | Yes (*)          | Yes (*)      | Yes        | X          |
-| **Erlang**             | X                | Yes          | ??         | Yes        |
+| **Erlang**             | X                | Yes          | ?          | Yes        |
 | **Elixir (on Erlang)** | X                | Yes          | Yes        | Yes        |
 |                        |                  |              |            |            |
 | **C**                  | X                | X            | X          | X          |
