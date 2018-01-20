@@ -48,19 +48,6 @@ Source: Wikipedia Programming Language Infoboxes
 
 ## Paradigm
 
-Object-oriented (class-based, prototype-based) •
-Imperative (procedural) •
-Functional •
-Reflective •
-Structured •                                  |
-Generic •
-Concurrent •
-Event-driven •
-Distributed •
-Process-oriented •
-Scripting •
-Compiled •
-
 | Lang           | Paradigm                                                             |
 |----------------|----------------------------------------------------------------------|
 | **Ruby**       | Multi-paradigm: object-oriented, imperative, functional, reflective  |
@@ -82,7 +69,10 @@ Source: Wikipedia Programming Language Infoboxes
 
 ## Typing Discipline
 
-Dynamic vs Static - Strong vs Weak - Duck vs Explicit (Interfaces)
+_Dynamic vs Static (Manifest vs Inferred) -
+Strong vs Weak -
+Duck (Structural) vs Explicit Interface / Protocol Declarations_
+
 
 
 | Lang           | Typing Discipline                                                    |

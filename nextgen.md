@@ -35,19 +35,6 @@ Source: Wikipedia Programming Language Infoboxes
 
 ## Paradigm
 
-Object-oriented (class-based, prototype-based) •
-Imperative (procedural) •
-Functional •
-Reflective •
-Structured •                                  |
-Generic •
-Concurrent •
-Event-driven •
-Distributed •
-Process-oriented •
-Scripting •
-Compiled •
-
 
 | Lang                   | Paradigm                                                             |
 |------------------------|----------------------------------------------------------------------|
@@ -84,6 +71,7 @@ Source: Wikipedia Programming Language Infoboxes
 |------------------------|----------------------------------------------------------------------|
 | **Ruby**               | Ada, C++, CLU, Dylan, Eiffel, Lisp, Lua, Perl, Python, Smalltalk     |
 |                        | - vs -                                                               |
+| **Go**                 | Alef, APL, BCPL, C, CSP, Limbo, Modula, Newsqueak, Oberon, occam, Pascal, Smalltalk  |
 | **Rust**               | Alef, C#, C++, Cyclone, Erlang, Haskell, Haxe, Hermes, Limbo, Newsqueak, NIL, OCaml, **Ruby**, Scheme, Standard ML, Swift   |
 | **Elixir (on Erlang)** | Erlang, **Ruby**, Clojure                                            |
 | **Crystal**            | **Ruby**, C, Rust, Go, C#, Python                                    |
@@ -98,6 +86,7 @@ Source: Wikipedia Programming Language Infoboxes
 |------------------------|----------------------------------------------------------------------|
 | **Ruby**               | Clojure, CoffeeScript, Crystal, D, Elixir, Falcon, Groovy, Ioke, Julia, Mirah, Nu, Reia, Ring, Rust, Swift  |
 |                        | - vs -                                                               |
+| **Go**                 | Crystal                  |
 | **Rust**               | Crystal, Elm, Idris      |
 | **Elixir (on Erlang)** | LFE (Lisp Flavored Erlang) |
 | **Crystal**            |                          |

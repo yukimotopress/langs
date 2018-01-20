@@ -7,6 +7,12 @@
 - add others??
 - add ruby fizzbuzz example - in detailed (functional style)
 
+## Hello, World!
+
+- https://en.wikipedia.org/wiki/%22Hello,_World!%22_program
+- https://helloworldcollection.github.io
+
+There are variations in spirit, as well. Functional programming languages, like Lisp, ML and Haskell, tend to substitute a factorial program for Hello, World, as functional programming emphasizes recursive techniques, whereas the original examples emphasize I/O, which violates the spirit of pure functional programming by producing side effects.
 
 ## update eurostones primes
 
@@ -17,6 +23,23 @@
 ## Add Memory Mangagement Language Table ???
 
 - Automatic Memory Management (Garbage Collection) vs Hand-Crafted/Hand-Coded/Manual
+
+
+## Add a table of Data Types ??
+
+- add data types of ruby here ??
+
+
+
+
+## Add "Modern" Lang Features Table ??
+
+- Pattern Matching
+- Concurrent (with Actors/Messages/Processes/Mailboxes) - Nothing Shared
+- Fault-Tolerant
+- Distributed
+- Immutable Data Structures
+- and and ??
 
 
 ## Performance / Speed
@@ -55,3 +78,22 @@ more langs:
 
 
 - https://github.com/grosser/parallel
+
+
+
+## Paradigms
+
+make a table with langs - why? why not??
+
+Object-oriented (class-based, prototype-based) •
+Imperative (procedural) •
+Functional •
+Reflective •
+Structured •                                  |
+Generic •
+Concurrent •
+Event-driven •
+Distributed •
+Process-oriented •
+Scripting •
+Compiled •

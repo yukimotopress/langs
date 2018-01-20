@@ -21,7 +21,10 @@ by Team Ruby Lang.org, [Marcus Stollsteimer](https://github.com/stomar),
   - [To Ruby from PHP](to-ruby-from-php.md)
   - [Ruby vs Language Classics - 10 One Liners to Impress Your Friends](classics-10-one-liners.md)
 - [Ruby vs Language Next Generation](nextgen.md) - Go • Rust • Elixir (on Erlang) • Crystal
-- [Typing Discipline - Dynamic vs Static - Timeline](dynamic-vs-static.md)
+- [Appendix - Languages Timeline w/ Hello, World! Programms](timeline.md) - Typing Discipline (Dynamic vs Static)
+
+
+
 
 
 
