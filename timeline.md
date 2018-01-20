@@ -216,9 +216,9 @@ Implicit (Structural/Duck) vs Explicit Interface/Protocol Declarations
 
 
 | Lang                   | Object-Oriented  |  Functional  | Reflective | Concurrent |
-|------------------------|-----------------------------------------------------------|
+|------------------------|------------------|--------------|------------|------------|
 | **Ruby**               | Yes              | Yes (*)      | Yes        | X          |
-|                        | - vs -           |
+|                        | - vs -           |         
 | **Perl**               | Yes              | Yes (*)      | Yes        | X          |
 | **Python**             | Yes              | Yes (*)      | Yes        | X          |
 | **PHP**                | Yes              | Yes (*)      | Yes (*)    | X          |
