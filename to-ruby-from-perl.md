@@ -1,5 +1,5 @@
 ---
-title: "To Ruby From Perl"
+title: To Ruby From Perl
 ---
 
 Perl is awesome. Perl’s docs are awesome. The Perl community is …

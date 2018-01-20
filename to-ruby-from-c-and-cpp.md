@@ -1,5 +1,5 @@
 ---
-title: "To Ruby From C and C++"
+title: To Ruby From C and C++
 ---
 
 It’s difficult to write a bulleted list describing how your code will be

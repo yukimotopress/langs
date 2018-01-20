@@ -99,7 +99,7 @@ Source: Wikipedia Programming Language Infoboxes
 | **Ruby**               | Clojure, CoffeeScript, Crystal, D, Elixir, Falcon, Groovy, Ioke, Julia, Mirah, Nu, Reia, Ring, Rust, Swift  |
 |                        | - vs -                                                               |
 | **Rust**               | Crystal, Elm, Idris      |
-| **Elixir (on Erlang)** | LFE                      |
+| **Elixir (on Erlang)** | LFE (Lisp Flavored Erlang) |
 | **Crystal**            |                          |
 
 Source: Wikipedia Programming Language Infoboxes

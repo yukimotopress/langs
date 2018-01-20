@@ -1,5 +1,5 @@
 ---
-title: "To Ruby From Java"
+title: To Ruby From Java
 ---
 
 Java is mature. It’s tested. And it’s fast (contrary to what the

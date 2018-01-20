@@ -1,5 +1,5 @@
 ---
-title: "To Ruby From Python"
+title: To Ruby From Python
 ---
 
 Python is another very nice general purpose programming language. Going

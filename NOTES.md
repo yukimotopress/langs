@@ -1,5 +1,19 @@
 # Notes
 
+
+## FizzBuzz
+
+- add fizz buzz examples from rosetta
+- add others??
+- add ruby fizzbuzz example - in detailed (functional style)
+
+
+## update eurostones primes
+
+- use samples from rosetta stone ?
+
+
+
 ## Add Memory Mangagement Language Table ???
 
 - Automatic Memory Management (Garbage Collection) vs Hand-Crafted/Hand-Coded/Manual
@@ -13,6 +27,13 @@
 ## Packages / Module (Counts) / Libraries
 
 
+## Add more codes samples for rosetta stone ??
+
+- hello world
+- quicksort
+- Fibonacci sequence
+- bitcoin address checker / validator ??
+
 
 
 ## 10 One liners
@@ -23,12 +44,8 @@
 - https://gist.github.com/dex4er/1602949
 - https://gist.github.com/smasty/1011261
 - https://github.com/aruld/java-oneliners/wiki
+- http://d1ffuz0r.com/10-erlang-one-liners-to-impress-your-friends.html
+
+
 
 - https://github.com/grosser/parallel
-
-
-
-## FizzBuzz
-
-- add fizz buzz examples from rosetta
-- add others??

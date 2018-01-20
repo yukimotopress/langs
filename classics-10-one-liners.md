@@ -1,14 +1,9 @@
-To Ruby From C and C++
-To Ruby From Java
-To Ruby From JavaScript
-To Ruby From Perl
-To Ruby From PHP
-To Ruby From Python
+---
+title: 10 One Liners to Impress Your Friends
+---
 
+_Ruby • Perl • Python • PHP •  Erlang • Java • JavaScript_
 
-
-
-# 10 One Liners to Impress Your Friends
 
 The one liners are:
 
@@ -55,14 +50,24 @@ PHP
 <? foreach(range(1, 10) as $i) echo $i * 2 . " ";
 ```
 
+Erlang
+
+``` erl
+[X * 2 || X <- lists:seq(1, 11)].
+```
 
 Java
 
 ``` java
 int[] ia = range(1, 10).map(i -> i * 2).toArray();
+// -or-
 List<Integer> result = range(1, 10).map(i -> i * 2).boxed().collect(toList());
 ```
 
+JavaScript
+
+``` js
+```
 
 
 ## One Liner #2 - Sum a List of Numbers
@@ -99,14 +104,30 @@ PHP
 <? echo array_sum(range(1, 1000));
 ```
 
+Erlang
+
+``` erl
+lists:sum(lists:seq(1, 1001)).
+```
+
+
 Java
 
 ``` java
 range(1, 1000).sum();
+// -or-
 range(1, 1000).reduce(0, Integer::sum);
+// -or-
 Stream.iterate(0, i -> i + 1).limit(1000).reduce(0, Integer::sum);
+// -or-
 IntStream.iterate(0, i -> i + 1).limit(1000).reduce(0, Integer::sum);
 ```
+
+JavaScript
+
+``` js
+```
+
 
 
 ## One Liner #3 - Verify if Exists in a String
@@ -148,6 +169,29 @@ $tweet = "This is an example tweet talking about PHP and Apache.";
 foreach($words as $word) if(stripos($tweet, $word) !== false) echo "$word\n";
 ```
 
+Erlang
+
+``` erl
+Words = ["scala", "akka", "play framework", "sbt", "typesafe"].
+Tweet = "This is an example tweet talking about scala and sbt".
+[lists:member(S, Words) || S <- string:tokens(Tweet, " ")].
+```
+
+Java
+
+``` java
+final List<String> keywords = Arrays.asList("brown", "fox", "dog", "pangram");
+final String tweet = "The quick brown fox jumps over a lazy dog. #pangram";
+
+keywords.stream().anyMatch(tweet::contains);
+keywords.stream().reduce(false, (b, keyword) -> b || tweet.contains(keyword), (l, r) -> l || r);
+```
+
+JavaScript
+
+``` js
+```
+
 
 ## One Liner #4 - Read in a File
 
@@ -181,6 +225,33 @@ PHP
 <? echo file_get_contents("oneliners.php");
 ```
 
+Erlang
+
+``` erl
+file:read_file("ten_one_liners.erl").
+```
+
+Java
+
+``` java
+try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
+  String fileText = reader.lines().reduce("", String::concat);
+}
+// -or-
+try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
+  List<String> fileLines = reader.lines().collect(toCollection(LinkedList<String>::new));
+}
+// -or-
+try (Stream<String> lines = Files.lines(new File("data.txt").toPath(), Charset.defaultCharset())) {
+  List<String> fileLines = lines.collect(toCollection(LinkedList<String>::new));
+}
+```
+
+JavaScript
+
+``` js
+```
+
 
 ## One Liner #5 - Happy Birthday to You!
 
@@ -212,6 +283,22 @@ PHP
 <? foreach(range(1, 4) as $i) echo "Happy Birthday " .($i == 3 ? "dear Martin" : "to You") . "\n";
 ```
 
+Erlang
+
+``` erl
+["Happy Birthday " ++ case X of 2 -> "dear Robert"; _ -> "You" end || X <- lists:seq(1, 4)].
+```
+
+Java
+
+``` java
+range(1, 5).boxed().map(i -> { out.print("Happy Birthday "); if (i == 3) return "dear NAME"; else return "to You"; }).forEach(out::println);
+```
+
+JavaScript
+
+``` js
+```
 
 
 ## One Liner #6 - Filter list of numbers
@@ -244,6 +331,22 @@ PHP
 <? foreach(array(49, 58, 76, 82, 88, 90) as $i) $i > 60 ? ($passed[] = $i) : ($failed[] = $i);
 ```
 
+Erlang
+
+``` erl
+[X || X <- lists:seq(40, 60), X >= 50].
+```
+
+Java
+
+``` java
+Map<String, List<Integer>> result = Stream.of(49, 58, 76, 82, 88, 90).collect(groupingBy(forPredicate(i -> i > 60, "passed", "failed")));
+```
+
+JavaScript
+
+``` js
+```
 
 
 ## One Liner #7 - Fetch and Parse an XML web service
@@ -278,6 +381,25 @@ PHP
 
 ``` php
 <? echo simplexml_load_file("http://search.twitter.com/search.atom?q=php")->asXML();
+```
+
+Erlang
+
+``` erl
+inets:start().
+xmerl_scan:string(element(3, element(2, httpc:request("http://search.twitter.com/search.atom?&q=erlang")))).
+```
+
+Java
+
+``` java
+FeedType feed = JAXB.unmarshal(new URL("http://search.twitter.com/search.atom?&q=java8"), FeedType.class);
+JAXB.marshal(feed, System.out);
+```
+
+JavaScript
+
+``` js
 ```
 
 
@@ -325,6 +447,31 @@ echo max(array(14, 35, -7, 46, 98)) . "\n";
 ```
 
 
+Erlang
+
+``` erl
+lists:min(lists:seq(1, 10)).
+lists:max(lists:seq(1, 10)).
+```
+
+Java
+
+``` java
+int min = Stream.of(14, 35, -7, 46, 98).reduce(Integer::min).get();
+    min = Stream.of(14, 35, -7, 46, 98).min(Integer::compare).get();
+    min = Stream.of(14, 35, -7, 46, 98).mapToInt(Integer::new).min();
+
+int max = Stream.of(14, 35, -7, 46, 98).reduce(Integer::max).get();
+    max = Stream.of(14, 35, -7, 46, 98).max(Integer::compare).get();
+    max = Stream.of(14, 35, -7, 46, 98).mapToInt(Integer::new).max();
+```
+
+JavaScript
+
+``` js
+```
+
+
 ## One Liner #9 - Parallel Processing
 
 Ruby
@@ -361,6 +508,23 @@ PHP
 
 ``` php
 <? ($pid = pcntl_fork()) == -1 ? exit(1) : ($pid ? hardCoreAction() && pcntl_wait($status) : hardCoreAction());
+```
+
+Erlang
+
+``` erl
+[spawn(fun() -> io:format("~w~n", [X * 2]) end) || X <- lists:seq(1, 10)].
+```
+
+Java
+
+``` java
+long result = dataList.parallelStream().mapToInt(line -> processItem(line)).sum();
+```
+
+JavaScript
+
+``` js
 ```
 
 
@@ -426,3 +590,19 @@ foreach($p = range(2, 100) as $v) foreach(range(2, $v - 1) as $c) if(!($v % $c) 
 echo join("\n", $p);
 ```
 
+Erlang
+
+``` erl
+N = 50.
+[X || X <- lists:usort(lists:seq(2, N + 1)), not lists:member(X, lists:usort([(P * F) || P <- lists:seq(2, round(math:pow(N, 0.5)) + 2), F <- lists:seq(2, round(N / P))]))].
+```
+
+Java
+
+``` java
+```
+
+JavaScript
+
+``` js
+```
