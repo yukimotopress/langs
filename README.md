@@ -22,6 +22,9 @@ by Team Ruby Lang.org, [Marcus Stollsteimer](https://github.com/stomar),
   - [Ruby vs Language Classics - 10 One Liners to Impress Your Friends](classics-10-one-liners.md)
 - [Ruby vs Language Next Generation](nextgen.md) - Go • Rust • Elixir (on Erlang) • Crystal
 - [Appendix - Languages Timeline w/ Hello, World! Programs](timeline.md)
+- [Appendix - Factorial Code Samples](factorial.md)
+
+
 
 
 

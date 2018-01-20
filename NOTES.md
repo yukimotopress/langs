@@ -129,7 +129,7 @@ Common programming paradigms include:
 - https://en.wikipedia.org/wiki/Scripting_language
 - https://en.wikipedia.org/wiki/Template:Types_of_programming_languages
 - https://en.wikipedia.org/wiki/Comparison_of_programming_languages
-
+- https://en.wikipedia.org/wiki/Category:Programming_language_comparisons
 
 
 ## Types
@@ -137,3 +137,17 @@ Common programming paradigms include:
 - https://en.wikipedia.org/wiki/Type_system
 - https://en.wikipedia.org/wiki/Data_type
 - https://en.wikipedia.org/wiki/Template:Data_types
+
+
+## Fibonacci
+
+- [Fibonacci sequence @ Rosetta Code](http://rosettacode.org/wiki/Fibonacci_sequence)
+- [Fibonacci number @ Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
+
+Use simpler Factorial for now (is like helle world for functional languages )
+
+
+
+## Use for World Cup 2018 as new example ?
+
+- http://rosettacode.org/wiki/World_Cup_group_stage
