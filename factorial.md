@@ -5,13 +5,8 @@ title: Factorial
 Definitions
 
 - The factorial of `0` (zero) is defined as being  `1` (unity).
-- The **Factorial Function** of a positive integer, `n`,
-  is defined as the product of the sequence:
+- The **Factorial Function** of a positive integer, `n`, is defined as the product of the sequence: `n`, `n-1`, `n-2`, ...  `1`
 
-  `n`, `n-1`, `n-2`, ...  `1`
-
-
-<!-- break -->
 
 Task
 
@@ -156,8 +151,29 @@ function factorial(n) {
 }
 ```
 
-(Source: [Rosetta Code](http://rosettacode.org/wiki/Factorial#PHP))
+(Source: [Rosetta Code](http://rosettacode.org/wiki/Factorial#JavaScript))
 
+
+
+## Java
+
+``` java
+// Recursive
+public static long factorial(int n) {
+    return (n < 2) ? 1 : n * factorial(n - 1);
+}
+
+// Iterative
+public static long fact(int n) {
+    long result = 1;
+    for (int i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+```
+
+(Source: [Rosetta Code](http://rosettacode.org/wiki/Factorial#Java))
 
 
 ## C
