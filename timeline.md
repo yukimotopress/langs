@@ -1,39 +1,6 @@
 ---
-title: Languages Timeline
+title: Languages Timeline w/ Hello, World! Programs
 ---
-
-
-## Typing Discipline
-
-Dynamic vs Static (Manifest vs Inferred) -
-Strong vs Weak -
-Implicit (Structural/Duck) vs Explicit Interface/Protocol Declarations
-
-
-| Lang                   | Typing Discipline                                                    |
-|------------------------|----------------------------------------------------------------------|
-| **Ruby**               | Dynamic, strong, duck                                                |
-|                        | - vs -                                                               |
-| **Perl**               | Dynamic                                                              |
-| **Python**             | Dynamic, strong, duck                                                |
-| **PHP**                | Dynamic, weak                                                        |
-| **Lua**                | Dynamic, strong, duck                                                |
-| **JavaScript**         | Dynamic, duck                                                        |
-| **Erlang**             | Dynamic, strong                                                      |
-| **Elixir (on Erlang)** | Dynamic, strong                                                      |
-|                        |                                                                      |
-| **C**                  | Static, weak, manifest, nominal                                      |
-| **C++**                | Static, nominative, partially inferred                               |
-| **Java**               | Static, strong, safe, nominative, manifest                           |
-| **Go**                 | Static, strong, inferred, structural                                 |
-| **Rust**               | Static, strong, inferred, nominal, linear                            |
-| **Crystal**            | Static                                                               |
-
-
-
-
-
-## Timeline w/ Hello, World! Programs
 
 _The program prints Hello, World! on the terminal, including a newline (`\n`) character._
 
@@ -210,7 +177,35 @@ puts "Hello, World!"
 
 
 
-### References
+### Hello, World! References
 
 - [Hello, World! (Text Terminal Versions) @ Rosseta Code](http://rosettacode.org/wiki/Hello_world/Text)
 - [Hello, World! Program @ Wikipedia](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program)
+
+
+
+### Typing Discipline
+
+Dynamic vs Static (Manifest vs Inferred) -
+Strong vs Weak -
+Implicit (Structural/Duck) vs Explicit Interface/Protocol Declarations
+
+
+| Lang                   | Typing Discipline                                                    |
+|------------------------|----------------------------------------------------------------------|
+| **Ruby**               | Dynamic, strong, duck                                                |
+|                        | - vs -                                                               |
+| **Perl**               | Dynamic                                                              |
+| **Python**             | Dynamic, strong, duck                                                |
+| **PHP**                | Dynamic, weak                                                        |
+| **Lua**                | Dynamic, strong, duck                                                |
+| **JavaScript**         | Dynamic, duck                                                        |
+| **Erlang**             | Dynamic, strong                                                      |
+| **Elixir (on Erlang)** | Dynamic, strong                                                      |
+|                        |                                                                      |
+| **C**                  | Static, weak, manifest, nominal                                      |
+| **C++**                | Static, nominative, partially inferred                               |
+| **Java**               | Static, strong, safe, nominative, manifest                           |
+| **Go**                 | Static, strong, inferred, structural                                 |
+| **Rust**               | Static, strong, inferred, nominal, linear                            |
+| **Crystal**            | Static                                                               |
