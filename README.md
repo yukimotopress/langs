@@ -3,8 +3,8 @@ See the live version @ [`yukimotopress.github.io/langs`](http://yukimotopress.gi
 
 # Ruby Compared to Other Languages (Manuscripts Book Edition)
 
-_C • C++ • Perl • Python • PHP • Lua • Java • JavaScript /
-Go • Rust • Elixir • Crystal_
+_C • C++ • Perl • Python • PHP • Lua • Erlang • Java • JavaScript /
+Go • Rust • Elixir (on Erlang) • Crystal_
 
 
 by Team Ruby Lang.org, [Marcus Stollsteimer](https://github.com/stomar),
@@ -12,7 +12,7 @@ by Team Ruby Lang.org, [Marcus Stollsteimer](https://github.com/stomar),
 
 
 - [Ruby From Other Languages](index.md)
-- [Ruby vs Language Classics](classics.md) - C • C++ • Perl • Python • PHP • Lua • Java • JavaScript
+- [Ruby vs Language Classics](classics.md) - C • C++ • Perl • Python • PHP • Lua • Erlang • Java • JavaScript
   - [To Ruby From C and C++](to-ruby-from-c-and-cpp.md)
   - [To Ruby from Java](to-ruby-from-java.md)
     - [Bonus - 10 Things Every Java Programmer Should Know About Ruby](to-ruby-from-java-10-things.md)
@@ -20,7 +20,7 @@ by Team Ruby Lang.org, [Marcus Stollsteimer](https://github.com/stomar),
   - [To Ruby from Python](to-ruby-from-python.md)
   - [To Ruby from PHP](to-ruby-from-php.md)
   - [Ruby vs Language Classics - 10 One Liners to Impress Your Friends](classics-10-one-liners.md)
-- [Ruby vs Language Next Generation](nextgen.md) - Go • Rust • Elixir • Crystal
+- [Ruby vs Language Next Generation](nextgen.md) - Go • Rust • Elixir (on Erlang) • Crystal
 - [Typing Discipline - Dynamic vs Static - Timeline](dynamic-vs-static.md)
 
 
