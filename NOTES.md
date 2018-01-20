@@ -46,6 +46,8 @@ There are variations in spirit, as well. Functional programming languages, like 
 
 ## Popularity (Metrics)
 
+- https://en.wikipedia.org/wiki/Measuring_programming_language_popularity
+
 
 ## Packages / Module (Counts) / Libraries
 
@@ -97,3 +99,41 @@ Distributed •
 Process-oriented •
 Scripting •
 Compiled •
+
+
+## Comparison of Programming languages
+
+- https://en.wikipedia.org/wiki/Programming_paradigm
+
+Common programming paradigms include:
+
+- imperative which allows side effects,
+- functional which disallows side effects,
+- declarative which does not state the order in which operations execute,
+- object-oriented which groups code together with the state the code modifies,
+- procedural which groups code into functions,
+- logic which has a particular style of execution model coupled to a particular style of syntax and grammar, and
+- symbolic programming which has a particular style of syntax and grammar.
+
+
+
+- https://en.wikipedia.org/wiki/Comparison_of_programming_languages
+- https://en.wikipedia.org/wiki/Comparison_of_multi-paradigm_programming_languages
+- https://en.wikipedia.org/wiki/Comparison_of_programming_languages_by_type_system
+- https://en.wikipedia.org/wiki/Generational_list_of_programming_languages
+- https://en.wikipedia.org/wiki/List_of_programming_languages_by_type
+- https://en.wikipedia.org/wiki/List_of_programming_languages
+- https://en.wikipedia.org/wiki/History_of_programming_languages
+- https://en.wikipedia.org/wiki/History_of_programming_languages
+- https://en.wikipedia.org/wiki/Timeline_of_programming_languages
+- https://en.wikipedia.org/wiki/Scripting_language
+- https://en.wikipedia.org/wiki/Template:Types_of_programming_languages
+- https://en.wikipedia.org/wiki/Comparison_of_programming_languages
+
+
+
+## Types
+
+- https://en.wikipedia.org/wiki/Type_system
+- https://en.wikipedia.org/wiki/Data_type
+- https://en.wikipedia.org/wiki/Template:Data_types
