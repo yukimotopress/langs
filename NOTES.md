@@ -13,3 +13,10 @@
 - https://github.com/aruld/java-oneliners/wiki
 
 - https://github.com/grosser/parallel
+
+
+
+## FizzBuzz
+
+- add fizz buzz examples from rosetta
+- add others??

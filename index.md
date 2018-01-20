@@ -21,8 +21,8 @@ with.
 * To Ruby From C and C++
 * To Ruby From Java
 * To Ruby From Perl
-* To Ruby From PHP
 * To Ruby From Python
+* To Ruby From PHP
 
 
 ## Important Language Features And Some Gotchas
@@ -48,6 +48,7 @@ end
 
 For more info on `each` (and its friends `collect`, `find`, `inject`,
 `sort`, etc.), see `ri Enumerable` (and then `ri Enumerable#some_method`).
+
 
 ### Everything has a value
 
