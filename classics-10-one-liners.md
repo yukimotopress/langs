@@ -83,8 +83,9 @@ p (1..1000).reduce(&:+)
 p  (1..1000).reduce(:+)
 # -or-
 p (1..1000).to_a.sum     # requires ruby 2.4+
+# -or-
+p (1..1000).sum          # requires ruby 2.5+
 # => 500500
-
 ```
 
 Perl
@@ -367,6 +368,10 @@ Ruby
 require 'open-uri'
 require 'nokogiri'
 results = Nokogiri::XML(open("http://search.twitter.com/search.atom?&amp;q=scala"))
+# -or-
+require "open-uri"
+require "rexml/document"
+results = REXML::Document.new(open("http://search.twitter.com/search.atom?&amp;q=scala"))
 ```
 
 Perl
