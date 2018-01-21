@@ -67,7 +67,7 @@ List<Integer> result = range(1, 10).map(i -> i * 2).boxed().collect(toList());
 JavaScript
 
 ``` js
-??
+Array.from({ length: 10 }).map((_, i) => (i + 1) * 2);
 ```
 
 
@@ -81,7 +81,10 @@ p (1..1000).reduce { |sum, n| sum + n }
 p (1..1000).reduce(&:+)
 # -or-
 p  (1..1000).reduce(:+)
+# -or-
+p (1..1000).to_a.sum     # requires ruby 2.4+
 # => 500500
+
 ```
 
 Perl
